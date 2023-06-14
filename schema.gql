@@ -1,0 +1,115 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserEntity {
+  """Identification number of user"""
+  identificationNumber: String!
+
+  """User`s first name"""
+  firstName: String!
+
+  """User`s last name"""
+  lastName: String!
+
+  """User email"""
+  email: String!
+
+  """User role"""
+  role: String!
+}
+
+type PostEntity {
+  """Identification number of post"""
+  id: String!
+
+  """Post title"""
+  title: String!
+
+  """Post content"""
+  content: String!
+
+  """Post tags"""
+  tags: [String!]!
+
+  """Post author"""
+  author: String!
+}
+
+type Query {
+  users: [UserEntity!]!
+  user(identificationNumber: String!): UserEntity!
+  posts: [PostEntity!]!
+  post(id: String!): PostEntity!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): UserEntity!
+  updateUser(updateUserInput: UpdateUserInput!): UserEntity!
+  removeUser(identificationNumber: String!): UserEntity!
+  createPost(createPostRequest: CreatePostRequestInput!): PostEntity!
+  updatePost(updatePostRequest: UpdatePostRequestInput!): PostEntity!
+  removePost(id: String!): PostEntity!
+}
+
+input CreateUserInput {
+  """User`s first name"""
+  firstName: String!
+
+  """User`s last name"""
+  lastName: String!
+
+  """User email"""
+  email: String!
+
+  """User role"""
+  role: String!
+}
+
+input UpdateUserInput {
+  """User`s first name"""
+  firstName: String
+
+  """User`s last name"""
+  lastName: String
+
+  """User email"""
+  email: String
+
+  """User role"""
+  role: String
+
+  """Identification number of user"""
+  identificationNumber: String!
+}
+
+input CreatePostRequestInput {
+  """Post title"""
+  title: String!
+
+  """Post content"""
+  content: String!
+
+  """Post tags"""
+  tags: [String!]!
+
+  """Post author"""
+  author: String!
+}
+
+input UpdatePostRequestInput {
+  """Post title"""
+  title: String
+
+  """Post content"""
+  content: String
+
+  """Post tags"""
+  tags: [String!]
+
+  """Post author"""
+  author: String
+
+  """Identification number of post"""
+  id: String!
+}
