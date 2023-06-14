@@ -15,7 +15,6 @@ import * as Joi from 'joi';
       validationSchema: Joi.object({
         API_PORT: Joi.number().default(3000),
         DEV_MODE: Joi.boolean().default(false),
-        CI: Joi.boolean().required().default(false),
         CFG: Joi.string().required(),
       }),
     }),
